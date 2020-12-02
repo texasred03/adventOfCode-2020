@@ -29,7 +29,7 @@ for line in fileData:
 
     # part 1
     letterCount = password.count(letter)
-    if letterCount >= minimum and letterCount <= maximum:
+    if minimum <= letterCount <= maximum:
         part1Total += 1
     # part 2
     if (password.startswith(letter, minimum-1) or password.startswith(letter, maximum-1)) and not (password.startswith(letter, minimum-1) and password.startswith(letter, maximum-1)):
