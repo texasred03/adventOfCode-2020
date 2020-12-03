@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 textFile = open(r"day3.txt", 'r')
@@ -13,7 +12,6 @@ def getTreeCount(x, y):
         column = (column + x) % len(line)
         if line.startswith('#', column-1):
             trees += 1
-        continue
     return trees
 
 print("Part1: " + str(getTreeCount(3,1)))
