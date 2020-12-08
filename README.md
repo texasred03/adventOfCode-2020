@@ -66,3 +66,50 @@ Right 1, down 2.
 ```
 ### Thoughts
 The first part was pretty easy.  The second part was a little more challenging due to the increase in down slope.  It just required a little more thinking. 
+
+## Day 4
+The automatic passport scanners are slow because they're having trouble detecting which passports have all required fields. Passport data is validated in batch files (your puzzle input). Each passport is represented as a sequence of key:value pairs separated by spaces or newlines. Passports are separated by blank lines. There are expected fields in the passport:
+```
+byr (Birth Year)
+iyr (Issue Year)
+eyr (Expiration Year)
+hgt (Height)
+hcl (Hair Color)
+ecl (Eye Color)
+pid (Passport ID)
+cid (Country ID)
+```
+### Part 1
+A passport is valid only when it contains a minimum of seven fields.  CID is the only optional field. 
+### Part 2
+You can continue to ignore the cid field, but each other field has strict rules about what values are valid for automatic validation:
+```
+byr (Birth Year) - four digits; at least 1920 and at most 2002.
+iyr (Issue Year) - four digits; at least 2010 and at most 2020.
+eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
+hgt (Height) - a number followed by either cm or in:
+    If cm, the number must be at least 150 and at most 193.
+    If in, the number must be at least 59 and at most 76.
+hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
+ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
+pid (Passport ID) - a nine-digit number, including leading zeroes.
+cid (Country ID) - ignored, missing or not.
+```
+### Sample Input
+```
+ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
+byr:1937 iyr:2017 cid:147 hgt:183cm
+
+iyr:2013 ecl:amb cid:350 eyr:2023 pid:028048884
+hcl:#cfa07d byr:1929
+
+hcl:#ae17e1 iyr:2013
+eyr:2024
+ecl:brn pid:760753108 byr:1931
+hgt:179cm
+
+hcl:#cfa07d eyr:2025 pid:166559648
+iyr:2011 ecl:brn hgt:59in
+```
+### Thoughts
+This took awhile.  I've come to find out I'm not nearly as knowledgeable about regex as I should be. I also learned that python has no concept of a switch statement, which would have made things a little easier.  This was a fun and frustrating puzzle. 
