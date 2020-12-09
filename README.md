@@ -113,3 +113,23 @@ iyr:2011 ecl:brn hgt:59in
 ```
 ### Thoughts
 This took awhile.  I've come to find out I'm not nearly as knowledgeable about regex as I should be. I also learned that python has no concept of a switch statement, which would have made things a little easier.  This was a fun and frustrating puzzle. 
+
+## Day 5
+You write a quick program to use your phone's camera to scan all of the nearby boarding passes (your puzzle input). A seat might be specified like FBFBBFFRLR, where F means "front", B means "back", L means "left", and R means "right". The first 7 characters will either be F or B; these specify exactly one of the 128 rows on the plane (numbered 0 through 127). Each letter tells you which half of a region the given seat is in. Start with the whole list of rows; the first letter indicates whether the seat is in the front (0 through 63) or the back (64 through 127). The next letter indicates which half of that region the seat is in, and so on until you're left with exactly one row.
+So, decoding FBFBBFFRLR reveals that it is the seat at row 44, column 5.
+Every seat also has a unique seat ID: multiply the row by 8, then add the column. In this example, the seat has ID 44 * 8 + 5 = 357.
+
+### Part 1
+What is the highest seat ID on a boarding pass?
+### Part 2
+Your seat wasn't at the very front or back, though; the seats with IDs +1 and -1 from yours will be in your list.
+What is the ID of your seat?
+### Sample Input
+```
+FBFBBFFRLR
+BFFFBBFRRR
+FFFBBBFRRR
+BBFFBBFRLL
+```
+### Thoughts
+This was a fun one and I really learned a lot of python, specifically that you can convert a string from a specified base to a decimal.  Once I learned that, this puzzle was pretty easy. 
