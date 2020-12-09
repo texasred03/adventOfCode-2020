@@ -15,3 +15,13 @@ for inputData in fileData:
     seatIds.append(getSeatId(inputData))
     
 print("Highest seat ID: " + str(max(seatIds)))
+
+i = 0
+mySeat = 0
+while i < len(seatIds):
+    if i not in seatIds and (i-1 in seatIds and i+1 in seatIds):
+        mySeat = i
+        break
+    i+=1
+    
+print("My seat ID: " + str(mySeat))
