@@ -36,7 +36,7 @@ def isPassportValid(passport):
 
 i = 0
 numValidPassports = 0
-while i < len(fileData)-1:
+while i < len(fileData):
     passport = ""
     while i < len(fileData) and fileData[i] != "":
         passport += fileData[i] + " "
